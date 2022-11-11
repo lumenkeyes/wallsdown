@@ -34,7 +34,7 @@
         for (let file of data) {
 		const aTag = document.createElement('a')
 		const liTag = document.createElement('li')
-		aTag.href = file.path
+		aTag.href = file.path.substring(0,file.path.length - 3)
 		aTag.innerText = file.name
 		liTag.appendChild(aTag)
 		notesList.appendChild(liTag)
