@@ -31,13 +31,13 @@
         const response = await fetch('https://api.github.com/repos/lumenkeyes/wallsdown/contents/meeting-notes/');
         const data = await response.json();
         const notesList = document.querySelector('#notesList');
-        const aTag = document.createElement('a')
-	const liTag = document.createElement('li')
         for (let file of data) {
-          aTag.href = file.path
-	  aTag.innerText = file.name
-	  liTag.appendChild(aTag)
-	  notesList.appendChild(liTag)
+		const aTag = document.createElement('a')
+		const liTag = document.createElement('li')
+		aTag.href = file.path
+		aTag.innerText = file.name
+		liTag.appendChild(aTag)
+		notesList.appendChild(liTag)
         }
       })()
     </script>
